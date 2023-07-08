@@ -21,11 +21,11 @@ type Props ={
       body: JSON.stringify({ searchTerm: term, ...searchParams}),
     });
 
-    const data = await response.json() as PageResults[];
+    const results = await response.json() as PageResults[];
 
   return (
     <div>
-        Welcmome to the search result page
+        <ResultsList results={ results} term={term}/>
     </div>
   )
 }
